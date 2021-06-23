@@ -18,11 +18,11 @@
 			<div class="card mt-3">
 				<div class="card-body">
 					<h3 class="card-title text-center">Админ орталық</h3>
-					<a href="<%=request.getContextPath()%>/AdminServlet" class="d-block">Тізімге оралу</a>
-					<a href="<%=request.getContextPath()%>/add-railway-form.jsp">Жаңа бағыт еңгізу</a>
+					<a href="<%=request.getContextPath()%>/AdminServlet" class="btn btn-outline-dark mb-2 w-50 m-10 p-10">Тізімге оралу</a>
+					<!-- <a href="<%=request.getContextPath()%>/add-railway-form.jsp">Жаңа бағыт еңгізу</a> -->
 					<form method="get" action="<%= request.getContextPath() %>/AdminServlet">
 						<input type="hidden" name="command" value="LOGOUT">
-						<input type="submit" class="btn btn-link w-30 m-0 p-0" value="Жүйеден шығу">
+						<input type="submit" class="btn btn-outline-dark w-50 m-10 p-10 " value="Жүйеден шығу">
 					</form>
 				</div>
 			</div>

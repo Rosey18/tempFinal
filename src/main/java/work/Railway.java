@@ -1,7 +1,7 @@
 package work;
 
 public class Railway {
-	
+
 	private int id;
 	private String trainNum;
 	private String departure;
@@ -9,7 +9,7 @@ public class Railway {
 	private String carriage;
 	private int seat;
 	private int price;
-	
+
 	public Railway(int id, String trainNum, String departure, String arrival, String carriage, int seat, int price) {
 		this.id = id;
 		this.trainNum = trainNum;
@@ -27,7 +27,7 @@ public class Railway {
 		this.carriage = carriage;
 		this.seat = seat;
 		this.price = price;
-		
+
 	}
 
 	public int getId() {
@@ -77,7 +77,6 @@ public class Railway {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
 
 	public int getSeat() {
 		return seat;
@@ -92,8 +91,5 @@ public class Railway {
 		return "Railway [id=" + id + ", trainNum=" + trainNum + ", departure=" + departure + ", arrival=" + arrival
 				+ ", carriage=" + carriage + ", seat=" + seat + ", price=" + price + "]";
 	}
-
-	
-
 
 }

@@ -13,9 +13,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <script type="text/javascript"> 
-function showAlert(){ 
-alert("Билет сәтті ресімделді"); 
-} 
+//setTimeout(function() {
+//    $('#myModal').modal();
+//}, 2000);
 </script> 
 <body class="container-fluid">
 <div class="row">
@@ -23,10 +23,10 @@ alert("Билет сәтті ресімделді");
 		<div class="card mt-3">
 			<div class="card-body">
 				<h3 class="card-title">Қолданышу парағы</h3>
-				<a href="<%=request.getContextPath() %>/UserServlet">Тізімге қайта оралу</a>
+				<a href="<%=request.getContextPath() %>/UserServlet" class="btn btn-outline-dark mb-2 w-50 m-10 p-10">Тізімге оралу</a>
 				<form action="<%=request.getContextPath()%>/UserServlet" method="GET">
 					<input type="hidden" name="command" value="LOGOUT">
-					<input type="submit" class="btn btn-link m-0 p-0" value="Жүйеден шығу">
+					<input type="submit" class="btn btn-outline-dark w-50 m-10 p-10 " value="Жүйеден шығу">
 				</form>
 			</div>
 		</div>
@@ -109,7 +109,9 @@ alert("Билет сәтті ресімделді");
 								<input type="text" name="email" class="form-control" style="width:75%;"/>
 							</div>
 							<div class="form-group mt-3">
+								<span data-toggle="modal" data-target="#myModal">
 								<a class="btn btn-primary w-50 d-block mx-auto" href="${decreaseSeat}" data-toggle="tooltip" title="Билетті сақтау">Сақтау</a>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -117,6 +119,22 @@ alert("Билет сәтті ресімделді");
 			</div>
 		</div>
 	</div>
+	<div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Билет сатып алу</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            Билет сәтті рәсімделді.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Жабу</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 </body>
 </html>

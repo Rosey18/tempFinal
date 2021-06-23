@@ -12,25 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<style>
-   tr:hover {
- 		background-color: #a9b7c4;
-	}
-	
-	td:hover::after,
-	th:hover::after {
-	  content: "";
-	  position: absolute;
-	  background-color: #FFFFFF;
-	  left: 0;
-	  top: -5000px;
-	  height: 10000px;
-	  width: 100%;
-	  z-index: -1;
-	}
 
-}
-</style>
 <% //In case, if User session is not set, redirect to Login page.
 if((request.getSession(false).getAttribute("User")== null) )
 {
@@ -46,7 +28,7 @@ if((request.getSession(false).getAttribute("User")== null) )
 					<h3 class="card-title">Қолданышу парағы</h3>
 					<form action="<%=request.getContextPath()%>/UserServlet" method="GET">
 						<input type="hidden" name="command" value="LOGOUT">
-						<input type="submit" class="btn btn-link m-0 p-0" value="Жүйеден шығу">
+						<input type="submit" class="btn btn-outline-dark w-50 m-10 p-10" value="Жүйеден шығу">
 					</form>
 				</div>
 			</div>
@@ -55,7 +37,7 @@ if((request.getSession(false).getAttribute("User")== null) )
 			<div class="card mt-3 mx-auto">
 				<div class="card-body mx-auto">
 					<h4 class="card-title text-center">Билет сатып алу</h4>
-					<table class="table table-responsive w-100 mx-auto text-center">
+					<table class="table table-responsive w-100 mx-auto text-center table-striped">
 						<thead class="table-head thead-dark">
 							<th>Поезд</th>
 							<th>Қайдан</th>
@@ -78,9 +60,9 @@ if((request.getSession(false).getAttribute("User")== null) )
 									<td> ${tempRailway.departure} </td>
 									<td> ${tempRailway.arrival} </td>
 									<td> ${tempRailway.carriage} </td>
-									<td>  ${tempRailway.seat} </td>
+									<td> ${tempRailway.seat}</td>
 									<td> ${tempRailway.price} </td>
-									<td> <a href="${tempLink}"><button class="btn btn-link">Таңдау</button></a></td>
+									<td> <a href="${tempLink}"><button class="btn btn-info">Таңдау</button></a></td>
 								</tr>
 
 							</c:forEach>

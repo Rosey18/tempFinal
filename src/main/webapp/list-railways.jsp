@@ -37,10 +37,10 @@ if((request.getSession(false).getAttribute("Admin")== null) )
 		<div class="card mt-3">
 			<div class="card-body">
 				<h3 class="card-title text-center">Админ орталық</h3>
-				<a href="<%=request.getContextPath()%>/add-railway-form.jsp">Жаңа бағыт еңгізу</a>
+				<a href="<%=request.getContextPath()%>/add-railway-form.jsp" class="btn btn-outline-dark mb-2 w-50 m-10 p-10">Жаңа бағыт еңгізу</a>
 				<form method="get" action="<%= request.getContextPath() %>/AdminServlet">
 					<input type="hidden" name="command" value="LOGOUT">
-					<input type="submit" class="btn btn-link w-30 m-0 p-0" value="Жүйеден шығу">
+					<input type="submit" class="btn btn-outline-dark w-50 m-10 p-10 " value="Жүйеден шығу">
 				</form>
 			</div>
 		</div>
@@ -49,7 +49,7 @@ if((request.getSession(false).getAttribute("Admin")== null) )
 		<div class="card mt-3 mx-auto">
 			<div class="card-body mx-auto">
 				<h5 class="card-title text-center">Бағыттар бойынша деректер</h5>
-				<table class="table table-responsive d-block mx-auto" cellspacing="0" width="100%" id="sortedTable">
+				<table class="table table-responsive d-block mx-auto table-striped" cellspacing="0" width="100%" id="sortedTable">
 					<thead class="table-head thead-dark text-center">
 						<tr>
 							<th>Поезд</th>
@@ -82,16 +82,15 @@ if((request.getSession(false).getAttribute("Admin")== null) )
 							<td> ${tempRailway.carriage} </td>
 							<td> ${tempRailway.seat} </td>
 							<td> ${tempRailway.price} </td>
-							<td> <a href="${tempLink}">Өзгерту</a>
+							<td> <a href="${tempLink}"><button class="btn btn-info">Өзгерту</button></a>
 								</td>
-							<td> <a href="${deleteLink}"><button class="btn btn-danger">&times;</button></a>
+							<td> <a href="${deleteLink}" onClick="if (!(confirm('Бұл билетті жойғыңыз келетініне сенімдісіз бе?'))) return false"><button class="btn btn-danger">&times;</button></a>
 						</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
-
 	</div>
 </div>
 <script type="text/javascript">
